@@ -12,70 +12,362 @@
 	width: 300px;
 }
 
+
 body {
     overflow-x: hidden;
     height: 100%;
     margin: 0;
 }
+/*========NAV-BAR  Section=============*/
+.navbar {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bottom shadow */
+}
 
+.navbar-custom {
+    background-color: #d4e2eb;
+}
+
+.navbar-custom .navbar-brand{
+    color: #586472;
+    font-size: 12px;
+}
+
+/* Style for nav links */
+.navbar-custom .nav-link {
+  position: relative; /* Set relative positioning for the pseudo-element */
+  color: #586472; /* Default link color */
+  text-decoration: none; /* Remove default underline */
+  transition: color 0.3s ease transform 0.3s ease; /* Smooth transition for font color */
+}
+
+/* Add a straight line at the bottom on hover */
+.navbar-custom .nav-link::after {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute; /* Position it at the bottom */
+  left: 0;
+  bottom: 0;
+  width: 0; /* Start with no width */
+  height: 2px; /* Line thickness */
+  background-color: #1f2020; /* Line color */
+  transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Change font color and expand the line on hover */
+.navbar-custom .nav-link:hover {
+  color: #1f2020; 
+  transform: scale(1.1);
+}
+
+.navbar-custom .nav-link:hover::after {
+  width: 100%; /* Full width of the nav link */
+}
+
+
+.navbar-custom .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+.navbar-toggler {
+  background-color: transparent; /* No background */
+  border: 2px solid #586472; /* Add a border */
+}
+
+.navbar-toggler:focus {
+  outline: 1px solid #1f2020 !important; 
+  box-shadow: none; /* No box shadow */
+}
+
+/*========NAV-BAR  Section=============*/
+
+/*=========Landing Section==============*/
+#landing {
+/*    background-color: #d4e2eb;*/
+    padding-top: 125px;
+    padding-bottom: 80px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-image: url(./images/background1.png);
+    background-size: cover; /* Scale the image to cover the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed;
+}
+
+/* Set text color to white */
+.white-text.description {
+  color: #45484a;
+  font-weight: 400;
+}
+
+.white-text.greetings {
+    font-weight: 800;
+    font-size: 50px;
+    color: #586472;
+}
+
+.white-text.greetings:hover {
+    font-weight: 800;
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+}
+
+.white-text.typing {
+    font-size: 30px;
+    color: #007BFF;
+    font-weight: bold;
+
+}
+
+
+/* Space between elements */
+#landing .row {
+  margin-top: 30px;
+  gap: 20px; /* Adjust the gap between elements */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Typing effect for Full Stack Web Developer */
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 5px solid white;
+  width: 0;
+  animation: typing 3s steps(20) 1s forwards, blink 0.7s step-end 3s infinite; /* Adjusted steps to 28 */
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor blink effect after typing */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Style for the "Let's Build Something Great Together" button */
+.contact-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #007BFF;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 100px;
+  border: 2px solid #007BFF;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow below the button */
+
+}
+
+.contact-button:hover {
+  background-color: #45484a;
+  border-color: #45484a;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  cursor: pointer;
+
+  
+}
+
+/* Remove cursor after typing is complete */
+.typing:after {
+  content: "";
+  animation: none;
+  border-right: none;
+}
+
+
+
+/*=========Landing Section==================*/
+
+
+/*=========Projects Section==================*/
+
+#projects {
+/*    background-color: #586472;*/
+    background-image: url(./images/background-project.png);
+    background-size: cover; /* Scale the image to cover the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#registration, #pinaupaph, #portfoliowebsite {
+    background-color: transparent;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow below the button */
+    font-weight: bold;
+}
+
+#registration:hover, #pinaupaph:hover, #portfoliowebsite:hover  {
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+  cursor: pointer;
+}
+
+.project-name {
+    font-weight: bold;
+    color: white;
+}
+
+
+/*=========Projects  Section==================*/
+
+
+
+/*=========Tools Section==================*/
+
+#tools {
+    background-color: #586472;
+    background-image: url(./images/background-tools.png);
+    background-size: cover; /* Scale the image to cover the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed;
+    padding-bottom: 100px;
+}
+
+.tools-header {
+    color: #d4e2eb;
+    font-weight: bold;
+    background-color: transparent;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow below the button */
+    text-transform: uppercase;
+}
+
+.tools-header:hover {
+/*  background-color: #45484a;*/
+  color: #007BFF;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  cursor: pointer;
+  
+}
+
+/*=========Tools  Section==================*/
+
+
+/*=========Contact Section==================*/
+
+#contact {
+    background-color: #586472;
+    background-image: url(./images/background-contact.png);
+    background-size: cover; /* Scale the image to cover the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed;
+    padding-bottom: 100px;
+}
+
+.get-in-touch {
+    background-color: #586472;
+/*    width: 100%; /* Make the container full width */*/
+    margin: 0; /* Remove any margin */
+    padding: 20px 0; /* Optional: Padding for spacing */
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(-50vw + 50%); /* Center and stretch */
+}
+
+.collaborate {
+    color: #d4e2eb;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+}
 
 .fa-solid, .fa-brands {
-
     font-size: 30px;
-    color: gray;
-    /*top right bottom left*/
+    color: #586472;
+    /* Top, right, bottom, left */
     margin: 0 10px 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and optional transform */
 }
 
 .fa-solid:hover, .fa-brands:hover {
-    color: black;
+    color: #1f2020;
+    transform: scale(1.5); /* Optional: Slightly enlarge the icon on hover */
+    cursor: pointer;
 }
+
 
 #map {
     height: 100%;
     width: 100%;
 }
 
-#registration, #pinaupaph, #portfoliowebsite {
-    background: lightgray;
-    border-radius: 30px;
+
+.message-me, .visit-me {
+    background-color: transparent;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow below the button */
+    padding-bottom: 70px;
+    padding-top: 70px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
+
+.message-me:hover, .visit-me:hover {
+  color: #007BFF;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */  
+}
+
+/*=========Contact  Section==================*/
 
 
 
 #tools-1 > img {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
     padding: 15px; /* Centers the icon within the box */
-    border-radius: 12px; /* Rounded corners */
     transition: transform 0.3s ease;
     background-position: center;
     background-size: cover;
 }
 
 #tools-2 > img {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
     padding: 15px; /* Centers the icon within the box */
-    border-radius: 12px; /* Rounded corners */
     transition: transform 0.3s ease;
     background-position: center;
     background-size: cover;
 }
 
 #tools-3 > img {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
     padding: 15px; /* Centers the icon within the box */
-    border-radius: 12px; /* Rounded corners */
     transition: transform 0.3s ease;
     background-position: center;
     background-size: cover;
 }
 
-
-#tool-logo:hover {
+.tool-logo:hover {
     transform: scale(1.2);
+    cursor: pointer;
 }
 
 #logo {
@@ -83,6 +375,51 @@ body {
     font-weight: bold;
 }
 
-#container-title {
+#container-title-projects {
     font-weight: bold;
+    text-transform: uppercase;
+    color: #d4e2eb;
+    padding-top: 100px;
+    font-weight: 800;
+    font-size: 50px;
+
+}
+
+#container-title-tools {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #586472;
+    padding-top: 100px;
+    font-weight: 800;
+    font-size: 50px;
+}
+
+#container-title-contact {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #d4e2eb;
+    padding: 100px;
+    font-weight: 800;
+    font-size: 50px;
+    transition: transform 0.3s ease;
+}
+
+#container-title-contact:hover {
+    color: white;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.btn-dark {
+    background-color: #586472;
+    color: #d4e2eb;
+}
+
+/*============FOOTER SECTION================*/
+#footer {
+    background-color: #586472;
+    color: white;
+    padding: 30px;
+    justify-content: center;
+    align-content: center;
 }
